@@ -1,6 +1,6 @@
 version: '2'
 services:
-    shopapp-mysql:
+    shop-app-mysql:
         image: mysql:5.7.20
         # volumes:
         #     - ~/volumes/jhipster/ShopApp/mysql/:/var/lib/mysql/
