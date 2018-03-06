@@ -42,6 +42,16 @@ public class CacheConfiguration {
             cm.createCache(de.kkottke.shopapp.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(de.kkottke.shopapp.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(de.kkottke.shopapp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Category.class.getName() + ".products", jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Product.class.getName(), jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Product.class.getName() + ".categories", jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Customer.class.getName(), jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Customer.class.getName() + ".addresses", jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Customer.class.getName() + ".whislists", jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Address.class.getName(), jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Wishlist.class.getName(), jcacheConfiguration);
+            cm.createCache(de.kkottke.shopapp.domain.Wishlist.class.getName() + ".products", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

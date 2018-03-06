@@ -1,0 +1,48 @@
+
+<div *ngIf="address">
+    <h2><span jhiTranslate="shopApp.address.detail.title">Address</span> {{address.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="shopApp.address.address1">Address 1</span></dt>
+        <dd>
+            <span>{{address.address1}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.address.address2">Address 2</span></dt>
+        <dd>
+            <span>{{address.address2}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.address.city">City</span></dt>
+        <dd>
+            <span>{{address.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.address.postcode">Postcode</span></dt>
+        <dd>
+            <span>{{address.postcode}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.address.country">Country</span></dt>
+        <dd>
+            <span>{{address.country}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.address.customer">Customer</span></dt>
+        <dd>
+            <div *ngIf="address.customer">
+                <a [routerLink]="['/customer', address.customer?.id]">{{address.customer?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'address/'+ address.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

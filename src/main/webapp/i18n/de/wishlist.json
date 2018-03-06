@@ -1,0 +1,25 @@
+
+{
+    "shopApp": {
+        "wishlist" : {
+            "home": {
+                "title": "Wishlists",
+                "createLabel": "Wishlist erstellen",
+                "createOrEditLabel": "Wishlist erstellen oder bearbeiten"
+            },
+            "created": "Wishlist erstellt mit ID {{ param }}",
+            "updated": "Wishlist aktualisiert mit ID {{ param }}",
+            "deleted": "Wishlist gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Wishlist {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Wishlist"
+            },
+            "title": "Title",
+            "restricted": "Restricted",
+            "product": "Product",
+            "customer": "Customer"
+        }
+    }
+}

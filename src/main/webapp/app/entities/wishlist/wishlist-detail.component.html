@@ -1,0 +1,36 @@
+
+<div *ngIf="wishlist">
+    <h2><span jhiTranslate="shopApp.wishlist.detail.title">Wishlist</span> {{wishlist.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="shopApp.wishlist.title">Title</span></dt>
+        <dd>
+            <span>{{wishlist.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.wishlist.restricted">Restricted</span></dt>
+        <dd>
+            <span>{{wishlist.restricted}}</span>
+        </dd>
+        <dt><span jhiTranslate="shopApp.wishlist.customer">Customer</span></dt>
+        <dd>
+            <div *ngIf="wishlist.customer">
+                <a [routerLink]="['/customer', wishlist.customer?.id]">{{wishlist.customer?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'wishlist/'+ wishlist.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
