@@ -56,6 +56,19 @@ server:
     session:
         cookie:
             http-only: true
+    undertow:
+        #accept-count= # Maximum queue length for incoming connection requests when all possible request processing threads are in use.
+        accesslog:
+            buffered: false # Buffer output such that it is only flushed periodically.
+            directory: logs # Directory in which log files are created. Can be relative to the tomcat base dir or absolute.
+            enabled: true # Enable access log.
+            pattern: '%a - %u %t "%r" %s %b "%{i,Referer}" "%{i,User-Agent}"'
+            prefix: access_log # Log file name prefix.
+            rename-on-rotate: false # Defer inclusion of the date stamp in the file name until rotate time.
+            request-attributes-enabled: false # Set request attributes for IP address, Hostname, protocol and port used for the request.
+            rotate: true # Enable access log rotation.
+            suffix: .log # Log file name suffix.
+        uri-encoding: UTF-8 # Character encoding to use to decode the URI.
 
 info:
     project:
