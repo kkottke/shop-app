@@ -116,8 +116,8 @@ jhipster:
             port: 2003
             prefix: ShopApp
         prometheus:
-            enabled: false
-            endpoint: /prometheusMetrics
+            enabled: true
+            endpoint: /prometheus/metrics
         logs: # Reports Dropwizard metrics in the logs
             enabled: false
             report-frequency: 60 # in seconds
